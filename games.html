@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+        <link rel="icon" type="image/png" href="assets/ln.png">
+        <title>LNClassroom</title>
+        <style>
+            body {
+                background-color: #4455DD;
+            }
+            h1 {
+                color: aliceblue;
+                font-family: "Montserrat", sans-serif;
+                font-size: 48px;
+            }
+            .gameTitle {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            .ruffleWindow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+        </style>
+    </head>
+    <body><div id="nav-placeholder" style="padding-bottom: 40px;"></div><script>$(function(){$("#nav-placeholder").load("navbar.html");});</script></body>
+    <body>
+        
+
+        <div class="gameTitle">
+            <h1>Papa's Freezeria</h1>
+        </div>
+        
+        <div id="fullscreen" class="ruffleWindow">
+            <embed src="https://teethpasterino.github.io/ruffle/flash/papasfreezeria.swf" width="800" height="600" />
+        </div>
+        <button href="#" id="toggle_fullscreen">Toggle Fullscreen</button>
+        <script>$('#toggle_fullscreen').on('click', function(){
+            if (document.fullscreenElement) {
+              document.exitFullscreen();
+            } else {
+              $('#fullscreen').get(0).requestFullscreen();
+            }
+          });</script>
+          
+    </body>
+</html>

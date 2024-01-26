@@ -11,6 +11,7 @@
                 color: aliceblue;
                 font-family: "Montserrat", sans-serif;
                 font-size: 48px;
+                padding-top: 40px;
             }
             .gameTitle {
                 display: flex;
@@ -19,13 +20,11 @@
             }
             .ruffleWindow {
                 display: flex;
-                align-items: center;
                 justify-content: center;
             }
             
         </style>
     </head>
-    <body><div id="nav-placeholder" style="padding-bottom: 40px;"></div><script>$(function(){$("#nav-placeholder").load("navbar.html");});</script></body>
     <body>
         
 
@@ -36,6 +35,7 @@
         <div id="fullscreen" class="ruffleWindow">
             <script>window.RufflePlayer = window.RufflePlayer || {}; window.RufflePlayer.config = {"quality": "low", "splashScreen": false}</script>
             <object><embed src="https://teethpasterino.github.io/ruffle/flash/papasfreezeria.swf" width="800" height="600" /></object>
-        </div>
+        </div>   
     </body>
+    <body><div id="nav-placeholder"></div><script>$(function(){$("#nav-placeholder").load("navbar.html");});</script></body>
 </html>

@@ -1,0 +1,11 @@
+     </div>
+        <button href="#" id="toggle_fullscreen">Toggle Fullscreen</button>
+        <script>$('#toggle_fullscreen').on('click', function(){
+            if (document.fullscreenElement) {
+              document.exitFullscreen();
+            } else {
+              $('#fullscreen').get(0).requestFullscreen();
+            }
+          });</script>
+          
+<!-- fullscreen a div with the id = "fullscreen" and keep the shitty button there too-->

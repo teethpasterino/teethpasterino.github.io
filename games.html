@@ -2,7 +2,6 @@
     <head>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-        <link rel="icon" type="image/png" href="assets/ln.png">
         <title>LNClassroom</title>
         <style>
             body {
@@ -36,15 +35,5 @@
         
         <div id="fullscreen" class="ruffleWindow">
             <embed src="https://teethpasterino.github.io/ruffle/flash/papasfreezeria.swf" width="800" height="600" />
-        </div>
-        <button href="#" id="toggle_fullscreen">Toggle Fullscreen</button>
-        <script>$('#toggle_fullscreen').on('click', function(){
-            if (document.fullscreenElement) {
-              document.exitFullscreen();
-            } else {
-              $('#fullscreen').get(0).requestFullscreen();
-            }
-          });</script>
-          
     </body>
 </html>

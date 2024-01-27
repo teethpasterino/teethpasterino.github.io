@@ -16,6 +16,7 @@ body {margin:0;font-family:Arial}
   top: 0;
   width: 100%;
   font-family: "Montserrat", sans-serif;
+  z-index: 999;
 }
 
 .topnav a {
@@ -90,10 +91,9 @@ li {
 </style>
 </head>
 <body>
-
 <div class="topnav">
-  <li><img src="/assets/ln.png" width="32px" style="padding: 8;"></li>
-  <a href="/index">LNClassroom</a>
+  <li><img src="/assets/ln.png" width="32px" style="padding: 8px;" ></li>
+  <a href="/">LNClassroom</a>
   <div class="dropdown">
     <button onclick="window.location.href='/games';" class="dropbtn">Games</button>
     <div class="dropdown-content">
@@ -102,8 +102,8 @@ li {
       <a href="#3">Link 3</a>
     </div>
   </div> 
-  <a href="about.html">About</a>
-  
+  <a href="/about.html">About</a>
+  <script>document.addEventListener('keydown', function(event){{if(event.code="Backquote") {window.open("https://classroom.google.com", "_blank")}}})</script>
 </div>
 </body>
 </html>

@@ -1,46 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {
-  margin:0;
-}
-ul {
+body {margin:0;font-family:Arial}
+
+.topnav {
   position: fixed;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: #000000b0;
   position: fixed;
   top: 0;
   width: 100%;
   font-family: "Montserrat", sans-serif;
 }
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 15px 15px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000b0;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #11111180;
+}
+
+.dropdown-content a:hover {
+  background-color: #11111180;
+  color: aliceblue;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 li {
   float: left;
 }
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px 16px;
-  text-decoration: none;
-}
-li a:hover {
-  background-color: #11111180;
-}
+
 </style>
 </head>
-<nav>
-<ul>
+<body>
+
+<div class="topnav">
   <li><img src="assets/ln.png" width="32px" style="padding: 8;"></li>
-  <li><a href="index.html">LNClassroom</a></li>
-  <li><a href="games.html">Games</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>
-</nav>
+  <a href="index.html">LNClassroom</a>
+  <div class="dropdown">
+    <button onclick="window.location.href='games.html';" class="dropbtn">Games</button>
+    <div class="dropdown-content">
+      <a href="papasfreezeria.html">Papa's Freezeria</a>
+      <a href="#2">Link 2</a>
+      <a href="#3">Link 3</a>
+    </div>
+  </div> 
+  <a href="about.html">About</a>
+  
+</div>
+</body>
 </html>
-
-

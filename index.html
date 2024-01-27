@@ -2,6 +2,7 @@
 
     <head>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="icon" type="image/png" href="assets/ln.png">
         <title>LNClassroom</title>
         <style>
@@ -19,7 +20,7 @@
             p {
                 color: aliceblue;
                 font-family: "Montserrat", sans-serif;
-                font-size: 12px;
+                font-size: 16px;
                 margin-top: 0;
             }
             .title {
@@ -32,7 +33,9 @@
     </head>
 
     <body>
-        <div class="title"><h2>Hit the backquote (the key above tab) to open Google Classroom!</h2></div>
+        <div class="title"><h2>Hit the backquote (the key above tab) to open Google Classroom!</br></h2></div>
+        <div class="title"><p>(open the list with the icon or open the games tab)</p></div>
+        <div class="title"><p>(sometimes, the new tab button needs 2 clicks)</p></div>
         <div id="nav-placeholder"></div>
         <script>$(function(){$("#nav-placeholder").load("navbar.html");});</script>
     </body>

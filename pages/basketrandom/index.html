@@ -1,0 +1,188 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="icon" type="image/png" href="/assets/ln.png">
+        <title>LNClassroom</title>
+        <style>
+            body{
+                background:
+                linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url(/assets/lnbg.png);
+            }
+            h2 {
+                color: aliceblue;
+                font-family: "Montserrat", sans-serif;
+                font-size: 30px;
+                padding-top: 36px;
+            }
+            p {
+                color: aliceblue;
+                font-family: "Montserrat", sans-serif;
+                font-size: 12px;
+                margin-top: 0;
+            }
+            .gameTitle {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            .gameInfo {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            .htmlWindow {
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                width: 960px;
+                height: 600px;
+            }
+            .pad {
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            .button {
+                width: 260px;
+                font-family: montserrat;
+                appearance: none;
+                border: 0;
+                border-radius: 24px;
+                background: #4455DD;
+                color: #fff;
+                padding: 10px 32px;
+                font-size: 24px;
+                cursor: pointer;
+                }
+
+            .button:hover {
+                background: #B0C4DE;
+                }
+
+            .button:focus {
+                outline: none;
+                box-shadow: 0 0 0 4px #cbd6ee;
+                }
+                
+            .button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 80%;
+            }
+              
+        </style>
+        <script>
+            var is_fullscreen = false;
+            function openFullscreen() {
+            let game = document.getElementById("fullscreen");
+            if(is_fullscreen){
+                is_fullscreen = false;
+                if(is_mobile_device()){
+                    game.style.position = "absolute";
+                    document.getElementById("fullscreen").style.display = "none";
+                } else {
+                    if (game.requestFullscreen) {
+                        game.requestFullscreen();
+                    } else if (game.mozRequestFullScreen) { /* Firefox */
+                        game.mozRequestFullScreen();
+                    } else if (game.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                        game.webkitRequestFullscreen();
+                    } else if (game.msRequestFullscreen) { /* IE/Edge */
+                        game.msRequestFullscreen();
+                    }
+                }
+            } else {
+                // Enter fullscreen
+                is_fullscreen = true;
+                if(is_mobile_device()){
+                    document.getElementById("fullscreen").style.display = "block";
+                    game.style.position = "fixed";
+                } else {
+                    if (game.requestFullscreen) {
+                        game.requestFullscreen();
+                    } else if (game.mozRequestFullScreen) { /* Firefox */
+                        game.mozRequestFullScreen();
+                    } else if (game.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                        game.webkitRequestFullscreen();
+                    } else if (game.msRequestFullscreen) { /* IE/Edge */
+                        game.msRequestFullscreen();
+                    }
+                }
+            }
+        };
+        function is_mobile_device(){
+            if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if($('iframe#game-area').length){
+            load_leaderboard({type: 'top', amount: 10});
+            drag_back_btn(document.getElementById("mobile-back-button"));
+            if(is_mobile_device()){
+                if($('#allow_mobile_version').length){
+                    document.getElementById('mobile-play').style.display = 'block';
+                    document.getElementById('fullscreen').style.display = 'none';
+                }
+            }
+        }</script>
+        <script>
+        function newTab() {
+            var urlObj = new window.URL(window.location.href);
+            var url = "https://teethpasterino.github.io/ruffle/html/basketrandom";
+    
+            if (url) {
+                var win;
+    
+                document.querySelector('button').onclick = function() {
+                    if (win) {
+                        win.focus();
+                    } else {
+                        win = window.open();
+                        win.document.body.style.margin = '0';
+                        win.document.body.style.height = '100vh';
+                        var iframe = win.document.createElement('iframe');
+                        iframe.style.border = 'none';
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100%';
+                        iframe.style.margin = '0';
+                        iframe.src = url;
+                        win.document.body.appendChild(iframe);
+                        
+    
+                        var interval = setInterval(function() {
+                            if (win.closed) {
+                                clearInterval(interval);
+                                win = undefined;
+    
+                            }
+                        }, 500);
+    
+    
+                    }
+                };
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <div class="gameTitle"><h2>Basket Random</h2></div>
+        <div class="gameInfo"><button class="button" onclick="newTab()">New Tab</button><p>⠀⠀</p><button class="button" onclick="openFullscreen()">Enter Fullscreen</button></div>
+        <div class="pad"></div>
+        <div id="fullscreen" class="htmlWindow">  
+            <embed src="https://teethpasterino.github.io/ruffle/html/basketrandom" style="width: 100%; height: 100%;">  
+        </div>   
+    </body>
+    <body><div id="nav-placeholder"></div><script>$(function(){$("#nav-placeholder").load("/navbar.html");});</script></body>
+</html>

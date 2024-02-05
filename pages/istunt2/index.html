@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="icon" type="image/png" href="/assets/ln.png">
+        <title>LNClassroom</title>
+        <style>
+            body{
+                background:
+                linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url(/assets/lnbg.png);
+            }
+            h2 {
+                color: aliceblue;
+                font-family: "Montserrat", sans-serif;
+                font-size: 30px;
+                padding-top: 36px;
+            }
+            p {
+                color: aliceblue;
+                font-family: "Montserrat", sans-serif;
+                font-size: 12px;
+                margin-top: 0;
+            }
+            .gameTitle {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            .gameInfo {
+                justify-content: center;
+                text-align: center;
+            }
+            .ruffleWindow {
+                display: flex;
+                justify-content: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="gameTitle"><h2>iStunt 2</h2></div>
+        <div class="gameInfo"><p>(right click and press enter fullscreen)</br>(flickering is caused by lag, try closing unneeded tabs?)</p></div>
+        <div id="fullscreen" class="ruffleWindow">   
+            <script>window.RufflePlayer = window.RufflePlayer || {}; window.RufflePlayer.config = {"quality": "low", "splashScreen": false, "playerRuntime": "air",}</script>
+            <object><embed src="https://teethpasterino.github.io/ruffle/flash/istunt2" width="800" height="600" /></object>
+        </div>   
+    </body>
+    <body><div id="nav-placeholder"></div><script>$(function(){$("#nav-placeholder").load("/navbar.html");});</script></body>
+</html>
